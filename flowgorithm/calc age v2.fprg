@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="calc age v2"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-16 10:21:41 a.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTE2OzA5OjE5OjM4IGEuwqBtLjsyOTcx"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTE2OzEwOjIxOjQxIGEuwqBtLjsxOzMwNTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="myAge" type="Integer" array="False" size=""/>
+            <declare name="birthYear" type="Integer" array="False" size=""/>
+            <declare name="CurrentYear" type="Integer" array="False" size=""/>
+            <assign variable="CurrentYear" expression="2025"/>
+            <output expression="&quot;Enter your year of birth (AAAA)&quot;" newline="True"/>
+            <input variable="birthYear"/>
+            <assign variable="myAge" expression="currentYear-birthyear"/>
+            <if expression="birthYear&lt;=CurrentYear">
+                <then>
+                    <output expression="&quot;Your age is: &quot;&amp; myAge" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;this Year is invalid&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="GetAge" type="Integer" variable="age">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
