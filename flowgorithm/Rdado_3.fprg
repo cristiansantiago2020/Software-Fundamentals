@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Rdado_3"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-23 12:59:05 a.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzEyOjM5OjQ0IGEuwqBtLjsyOTYy"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzEyOjQyOjU0IGEuwqBtLjsxO1BlcnNvbmFsO1NBTVNVTkc7MjAyNS0xMS0yMzsxMjowMTo0NyBhLsKgbS47NjA3OA=="/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzEyOjU5OjA1IGEuwqBtLjsxOzMwNjk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="ContarDados"/>
+        </body>
+    </function>
+    <function name="ContarDados" type="Integer" variable="veces">
+        <parameters/>
+        <body>
+            <declare name="veces" type="Integer" array="False" size=""/>
+            <declare name="cont" type="Integer" array="False" size=""/>
+            <declare name="dado" type="Integer" array="False" size=""/>
+            <declare name="n1" type="Integer" array="False" size=""/>
+            <declare name="n2" type="Integer" array="False" size=""/>
+            <declare name="n3" type="Integer" array="False" size=""/>
+            <declare name="n4" type="Integer" array="False" size=""/>
+            <declare name="n5" type="Integer" array="False" size=""/>
+            <declare name="n6" type="Integer" array="False" size=""/>
+            <assign variable="n1" expression="0"/>
+            <assign variable="n2" expression="0"/>
+            <assign variable="n3" expression="0"/>
+            <assign variable="n4" expression="0"/>
+            <assign variable="n5" expression="0"/>
+            <assign variable="n6" expression="0"/>
+            <assign variable="cont" expression="1"/>
+            <output expression="&quot;digita # de veces a lanzar&quot;" newline="True"/>
+            <input variable="veces"/>
+            <while expression="cont&lt;=veces">
+                <assign variable="dado" expression="Random(6)+1"/>
+                <output expression="&quot;dado &quot;&amp; cont&amp; &quot;: &quot;&amp; dado" newline="True"/>
+                <if expression="dado = 1">
+                    <then>
+                        <assign variable="n1" expression="n1+1"/>
+                    </then>
+                    <else>
+                        <if expression="dado = 2">
+                            <then>
+                                <assign variable="n2" expression="n2+1"/>
+                            </then>
+                            <else>
+                                <if expression="dado = 3">
+                                    <then>
+                                        <assign variable="n3" expression="n3+1"/>
+                                    </then>
+                                    <else>
+                                        <if expression="dado = 4">
+                                            <then>
+                                                <assign variable="n4" expression="n4+1"/>
+                                            </then>
+                                            <else>
+                                                <if expression="dado = 5">
+                                                    <then>
+                                                        <assign variable="n5" expression="n5+1"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="dado = 6">
+                                                            <then>
+                                                                <assign variable="n6" expression="n6+1"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="cont" expression="cont+1"/>
+            </while>
+            <output expression="&quot;#1 salio &quot;&amp; n1&amp; &quot; veces&quot;" newline="True"/>
+            <output expression="&quot;#2 salio &quot;&amp; n2&amp; &quot; veces&quot;" newline="True"/>
+            <output expression="&quot;#3 salio &quot;&amp; n3&amp; &quot; veces&quot;" newline="True"/>
+            <output expression="&quot;#4 salio &quot;&amp; n4&amp; &quot; veces&quot;" newline="True"/>
+            <output expression="&quot;#5 salio &quot;&amp; n5&amp; &quot; veces&quot;" newline="True"/>
+            <output expression="&quot;#6 salio &quot;&amp; n6&amp; &quot; veces&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
