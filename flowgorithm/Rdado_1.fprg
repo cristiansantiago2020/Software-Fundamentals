@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Rdado_1"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-23 12:00:56 a.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIyOzExOjQxOjUxIHAuwqBtLjsyOTY2"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzEyOjAwOjU2IGEuwqBtLjsxOzMwNjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="clasificar&#13;&#10;"/>
+        </body>
+    </function>
+    <function name="clasificar" type="Integer" variable="resultado">
+        <parameters/>
+        <body>
+            <declare name="resultado" type="Integer" array="False" size=""/>
+            <declare name="dado1" type="Integer" array="False" size=""/>
+            <declare name="dado2" type="Integer" array="False" size=""/>
+            <declare name="par" type="Integer" array="False" size=""/>
+            <declare name="impar" type="Integer" array="False" size=""/>
+            <assign variable="resultado" expression="0"/>
+            <assign variable="dado1" expression="Random(6)+1"/>
+            <assign variable="dado2" expression="Random(6)+1"/>
+            <output expression="&quot;dado 1: &quot;&amp; dado1" newline="True"/>
+            <output expression="&quot;dado 2: &quot;&amp; dado2" newline="True"/>
+            <if expression="dado1 % 2= 0">
+                <then>
+                    <output expression="&quot;el dado 1 es par&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;el dado 1 es impar&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="dado2 % 2= 0">
+                <then>
+                    <output expression="&quot;el dado 2 es par&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;el dado 2 es impar&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
