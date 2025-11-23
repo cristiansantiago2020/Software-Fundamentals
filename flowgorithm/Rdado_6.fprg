@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Rdado_6"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-23 02:49:24 a.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzAyOjAwOjU2IGEuwqBtLjsyOTUy"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzAyOjQ5OjI0IGEuwqBtLjsxOzMwNjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="contador&#13;&#10;"/>
+        </body>
+    </function>
+    <function name="contador" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dado1" type="Integer" array="False" size=""/>
+            <declare name="dado2" type="Integer" array="False" size=""/>
+            <declare name="iniciar" type="String" array="False" size=""/>
+            <declare name="cont" type="Integer" array="False" size=""/>
+            <declare name="resp" type="String" array="False" size=""/>
+            <declare name="totaltiros" type="Integer" array="False" size=""/>
+            <declare name="sumatotal" type="Integer" array="False" size=""/>
+            <declare name="totalpares" type="Integer" array="False" size=""/>
+            <declare name="totalimpares" type="Integer" array="False" size=""/>
+            <assign variable="totaltiros" expression="0"/>
+            <assign variable="sumatotal" expression="0"/>
+            <assign variable="totalpares" expression="0"/>
+            <assign variable="totalimpares" expression="0"/>
+            <output expression="&quot;lanzar dados (si,no)&quot;" newline="True"/>
+            <input variable="resp"/>
+            <while expression="resp = &quot;si&quot; or resp = &quot;SI&quot;">
+                <assign variable="dado1" expression="Random (6)+1"/>
+                <assign variable="dado2" expression="Random (6)+1"/>
+                <output expression="&quot;DADO 1: &quot;&amp; dado1&amp; &quot;   DADO 2: &quot;&amp; dado2" newline="True"/>
+                <assign variable="totaltiros" expression="totaltiros+1"/>
+                <assign variable="sumatotal" expression="sumatotal+dado1+dado2"/>
+                <if expression="dado1 % 2 = 0">
+                    <then>
+                        <assign variable="totalpares" expression="totalpares + 1"/>
+                    </then>
+                    <else>
+                        <assign variable="totalimpares" expression="totalimpares + 1"/>
+                    </else>
+                </if>
+                <if expression="dado2 % 2 = 0">
+                    <then>
+                        <assign variable="totalpares" expression="totalpares + 1"/>
+                    </then>
+                    <else>
+                        <assign variable="totalimpares" expression="totalimpares + 1"/>
+                    </else>
+                </if>
+                <output expression="&quot;lanzar dados (si,no)&quot;" newline="True"/>
+                <input variable="resp"/>
+            </while>
+            <if expression="resp = &quot;no&quot; or resp = &quot;NO&quot;">
+                <then>
+                    <output expression="&quot;ok gracias &quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;escribe bien&quot;" newline="True"/>
+                    <output expression="&quot;reinicia el sistema&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;RESULTADOS FINALES&quot;" newline="True"/>
+            <output expression="&quot;total de tiros: &quot; &amp; totaltiros" newline="True"/>
+            <output expression="&quot;suma total de los tiros: &quot;&amp; sumatotal" newline="True"/>
+            <output expression="&quot;total de pares generados: &quot;&amp; totalpares" newline="True"/>
+            <output expression="&quot;total de impares generados: &quot;&amp; totalimpares" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
