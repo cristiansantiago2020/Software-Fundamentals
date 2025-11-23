@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Rdado_2"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-23 12:39:36 a.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzEyOjAxOjQ3IGEuwqBtLjsyOTU0"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzEyOjM5OjM2IGEuwqBtLjsxOzMwNzE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="SumaDados"/>
+        </body>
+    </function>
+    <function name="SumaDados" type="Integer" variable="veces">
+        <parameters/>
+        <body>
+            <declare name="dado" type="Integer" array="False" size=""/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <declare name="veces" type="Integer" array="False" size=""/>
+            <declare name="cont" type="Integer" array="False" size=""/>
+            <assign variable="cont" expression="0"/>
+            <assign variable="suma" expression="0"/>
+            <output expression="&quot;# de veces que deseas lanzar&quot;" newline="True"/>
+            <input variable="veces"/>
+            <while expression="cont &lt; veces">
+                <assign variable="dado" expression="Random (6)+1"/>
+                <assign variable="cont" expression="cont +1"/>
+                <output expression="&quot;lanzamiento &quot;&amp; cont&amp;&quot;: &quot;&amp; dado" newline="True"/>
+                <assign variable="suma" expression="suma + dado"/>
+            </while>
+            <output expression="&quot;Suma Total:&quot;&amp; suma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
