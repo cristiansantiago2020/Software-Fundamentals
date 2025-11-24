@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="nomina"/>
+        <attribute name="authors" value="HP"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-22 04:56:50 "/>
+        <attribute name="created" value="SFA7RUxFQ1RST05JQy1BUlQ7MjAyNS0xMS0yMjsiMDM6MTM6MjMgIjsyMzU0"/>
+        <attribute name="edited" value="SFA7RUxFQ1RST05JQy1BUlQ7MjAyNS0xMS0yMjsiMDQ6NTY6NTAgIjsxOzI0NzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nameUs" type="String" array="False" size=""/>
+            <declare name="mail" type="String" array="False" size=""/>
+            <declare name="numTel" type="Real" array="False" size=""/>
+            <declare name="gender" type="String" array="False" size=""/>
+            <declare name="salary" type="Real" array="False" size=""/>
+            <declare name="yearN" type="Real" array="False" size=""/>
+            <declare name="res" type="String" array="False" size=""/>
+            <declare name="acum1" type="Integer" array="False" size=""/>
+            <declare name="acumGen" type="Integer" array="False" size=""/>
+            <declare name="acumGen2" type="Integer" array="False" size=""/>
+            <declare name="acumGen3" type="Integer" array="False" size=""/>
+            <assign variable="acum1" expression="0"/>
+            <assign variable="acumGen" expression="0"/>
+            <assign variable="acumGen2" expression="0"/>
+            <assign variable="acumGen3" expression="0"/>
+            <output expression="&quot;Desea ingresar un nuevo empleado? S/s O N/n: &quot;" newline="True"/>
+            <input variable="res"/>
+            <while expression="res = &quot;S&quot; or res = &quot;s&quot;">
+                <assign variable="acum1" expression="acum1 + 1"/>
+                <output expression="&quot;Nombres completos : &quot;" newline="True"/>
+                <input variable="nameUs"/>
+                <output expression="&quot;Ingrese Email : &quot;" newline="True"/>
+                <input variable="mail"/>
+                <output expression="&quot;Ingrese numero de telefono : &quot;" newline="True"/>
+                <input variable="numTel"/>
+                <output expression="&quot; Ingrese genero (M-F-O) : &quot;" newline="True"/>
+                <input variable="gender"/>
+                <if expression="gender = &quot;M&quot;">
+                    <then>
+                        <assign variable="acumGen" expression="acumGen +1"/>
+                    </then>
+                    <else>
+                        <if expression="gender = &quot;F&quot;">
+                            <then>
+                                <assign variable="acumGen2" expression="acumGen2 +1"/>
+                            </then>
+                            <else>
+                                <if expression="gender = &quot;O&quot;">
+                                    <then>
+                                        <assign variable="acumGen3" expression="acumGen3 +1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Ingrese salario : &quot;" newline="True"/>
+                <input variable="salary"/>
+                <output expression="&quot;Ingrese a&#241;o de nacimiento (AAAA) : &quot;" newline="True"/>
+                <input variable="yearN"/>
+                <output expression="&quot;Desea ingresar un nuevo empleado? S/s O N/n: &quot;" newline="True"/>
+                <input variable="res"/>
+            </while>
+            <output expression="&quot;Empleados registrados = &quot; &amp; acum1" newline="True"/>
+            <output expression="&quot;Total de genero M = &quot; &amp; acumGen" newline="True"/>
+            <output expression="&quot;Total de genero F = &quot; &amp; acumGen2" newline="True"/>
+            <output expression="&quot;Total de genero O = &quot; &amp; acumGen3" newline="True"/>
+        </body>
+    </function>
+    <function name="Registro" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
