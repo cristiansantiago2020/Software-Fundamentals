@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="reto condicional 2"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-23 09:16:14 p.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzA4OjI5OjE3IHAuwqBtLjsyOTgx"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzA5OjE2OjE0IHAuwqBtLjsyOzMwODQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numpos" type="Integer" array="False" size=""/>
+            <declare name="numneg" type="Integer" array="False" size=""/>
+            <declare name="resultado" type="Integer" array="False" size=""/>
+            <output expression="&quot;su numero aleatorio es: &quot;" newline="True"/>
+            <assign variable="numpos" expression="Random(100)+1"/>
+            <assign variable="numneg" expression="numpos*-1"/>
+            <if expression="Random(2)= 0">
+                <then>
+                    <assign variable="resultado" expression="numpos"/>
+                    <output expression="resultado" newline="True"/>
+                    <if expression="resultado %2 =0">
+                        <then>
+                            <output expression="&quot;es par positivo&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;es impar positivo&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="resultado" expression="numneg"/>
+                    <output expression="resultado" newline="True"/>
+                    <if expression="abs(resultado) %2 =0">
+                        <then>
+                            <output expression="&quot;es par negativo&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;es impar negativo&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

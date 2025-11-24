@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="reto condicional 5"/>
+        <attribute name="authors" value="Personal"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-23 11:49:11 p.&#160;m."/>
+        <attribute name="created" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzA5OjQwOjQ1IHAuwqBtLjsyOTc2"/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzExOjQxOjIwIHAuwqBtLjs0O1BlcnNvbmFsO1NBTVNVTkc7MjAyNS0xMS0yMzsxMDo0MDo0MSBwLsKgbS47NjA5Nw=="/>
+        <attribute name="edited" value="UGVyc29uYWw7U0FNU1VORzsyMDI1LTExLTIzOzExOjQ5OjExIHAuwqBtLjsyOzMwODA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="salario" type="Real" array="False" size=""/>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <declare name="gen" type="String" array="False" size=""/>
+            <declare name="yearago" type="Integer" array="False" size=""/>
+            <declare name="adrs" type="String" array="False" size=""/>
+            <declare name="doc" type="String" array="False" size=""/>
+            <declare name="men" type="Integer" array="False" size=""/>
+            <declare name="girl" type="Integer" array="False" size=""/>
+            <declare name="genero" type="Integer" array="False" size=""/>
+            <output expression="&quot;ingrese tipo de documento(CC,PS,CE,CI)&quot;" newline="True"/>
+            <input variable="doc"/>
+            <while expression="doc&lt;&gt; &quot;CC&quot; and doc&lt;&gt; &quot;PS&quot; and doc&lt;&gt; &quot;CE&quot; and doc&lt;&gt; &quot;CI&quot;">
+                <output expression="&quot;try again&quot;" newline="True"/>
+                <output expression="&quot;ingrese tipo de documento(CC,PS,CE,CI)&quot;" newline="True"/>
+                <input variable="doc"/>
+            </while>
+            <output expression="&quot;valid&quot;" newline="True"/>
+            <output expression="&quot;write your Name&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;write your Last Name&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;write your Gen (M or G)&quot;" newline="True"/>
+            <input variable="gen"/>
+            <assign variable="girl" expression="0"/>
+            <assign variable="men" expression="1"/>
+            <if expression="gen = &quot;G&quot;">
+                <then>
+                    <assign variable="genero" expression="girl"/>
+                </then>
+                <else>
+                    <assign variable="genero" expression="men"/>
+                </else>
+            </if>
+            <output expression="&quot;Write your yearbirth&quot;" newline="True"/>
+            <input variable="yearago"/>
+            <output expression="&quot;Write your adress&quot;" newline="True"/>
+            <input variable="adrs"/>
+            <output expression="&quot;numberphone&quot;" newline="True"/>
+            <input variable="num"/>
+            <output expression="&quot;salario&quot;" newline="True"/>
+            <input variable="salario"/>
+            <if expression="salario &lt;= 1200000">
+                <then>
+                    <if expression="girl=0">
+                        <then>
+                            <assign variable="salario" expression="salario + (salario*0.10)"/>
+                            <output expression="&quot;salario + 10% es: &quot;&amp; salario" newline="True"/>
+                        </then>
+                        <else>
+                            <assign variable="salario" expression="salario + (salario*0.08)"/>
+                            <output expression="&quot;salario + 8% es: &quot;&amp; salario" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="salario&lt;2000000 AND salario&gt;1200000">
+                        <then>
+                            <assign variable="salario" expression="salario + (salario*0.05)"/>
+                            <output expression="&quot;salario + 5% es: &quot;&amp; salario" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="salario &gt;= 2000000">
+                                <then>
+                                    <if expression="girl=0">
+                                        <then>
+                                            <assign variable="salario" expression="salario + (salario*0.03)"/>
+                                            <output expression="&quot;salario + 3% es: &quot;&amp; salario" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="salario" expression="salario + (salario*0.025)"/>
+                                            <output expression="&quot;salario + 2,5% es: &quot;&amp; salario" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
